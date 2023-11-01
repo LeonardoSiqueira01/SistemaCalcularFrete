@@ -30,18 +30,21 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtBoxVeiculo = new System.Windows.Forms.TextBox();
-            this.txtBoxLocalidade = new System.Windows.Forms.TextBox();
-            this.txtBoxAutonomiaCombustivel = new System.Windows.Forms.TextBox();
-            this.txtBoxDistanciaKM = new System.Windows.Forms.TextBox();
-            this.comboBoxTabela = new System.Windows.Forms.ComboBox();
-            this.checkBoxIdaVolta = new System.Windows.Forms.CheckBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.lblVeiculo = new System.Windows.Forms.Label();
-            this.lblLocalidade = new System.Windows.Forms.Label();
-            this.lblDistanciaKM = new System.Windows.Forms.Label();
-            this.lblAutonomiaCombustivel = new System.Windows.Forms.Label();
+            this.lblValorCombustivel = new System.Windows.Forms.Label();
+            this.txtBoxValorCombustivelPorLt = new System.Windows.Forms.TextBox();
             this.lblTabela = new System.Windows.Forms.Label();
+            this.lblAutonomiaCombustivel = new System.Windows.Forms.Label();
+            this.lblDistanciaKM = new System.Windows.Forms.Label();
+            this.lblLocalidade = new System.Windows.Forms.Label();
+            this.lblVeiculo = new System.Windows.Forms.Label();
+            this.checkBoxIdaVolta = new System.Windows.Forms.CheckBox();
+            this.comboBoxTabela = new System.Windows.Forms.ComboBox();
+            this.txtBoxDistanciaKM = new System.Windows.Forms.TextBox();
+            this.txtBoxAutonomiaCombustivel = new System.Windows.Forms.TextBox();
+            this.txtBoxLocalidade = new System.Windows.Forms.TextBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtBoxVeiculo = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblConsumoCombustivel = new System.Windows.Forms.Label();
             this.lblKmRodado = new System.Windows.Forms.Label();
             this.lblCustoKm = new System.Windows.Forms.Label();
@@ -53,10 +56,9 @@
             this.txtBoxCustoKM = new System.Windows.Forms.TextBox();
             this.txtBoxTotal = new System.Windows.Forms.TextBox();
             this.pictureBoxImgVeiculo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImgVeiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImgVeiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,6 +74,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblValorCombustivel);
+            this.panel1.Controls.Add(this.txtBoxValorCombustivelPorLt);
             this.panel1.Controls.Add(this.lblTabela);
             this.panel1.Controls.Add(this.lblAutonomiaCombustivel);
             this.panel1.Controls.Add(this.lblDistanciaKM);
@@ -90,27 +94,88 @@
             this.panel1.Size = new System.Drawing.Size(795, 212);
             this.panel1.TabIndex = 1;
             // 
-            // txtBoxVeiculo
+            // lblValorCombustivel
             // 
-            this.txtBoxVeiculo.Location = new System.Drawing.Point(10, 55);
-            this.txtBoxVeiculo.Name = "txtBoxVeiculo";
-            this.txtBoxVeiculo.Size = new System.Drawing.Size(189, 20);
-            this.txtBoxVeiculo.TabIndex = 1;
-            this.txtBoxVeiculo.Leave += new System.EventHandler(this.txtBoxVeiculo_Leave);
+            this.lblValorCombustivel.AutoSize = true;
+            this.lblValorCombustivel.Location = new System.Drawing.Point(288, 122);
+            this.lblValorCombustivel.Name = "lblValorCombustivel";
+            this.lblValorCombustivel.Size = new System.Drawing.Size(122, 13);
+            this.lblValorCombustivel.TabIndex = 14;
+            this.lblValorCombustivel.Text = "Valor do Combustível/Lt";
             // 
-            // txtBoxLocalidade
+            // txtBoxValorCombustivelPorLt
             // 
-            this.txtBoxLocalidade.Location = new System.Drawing.Point(205, 55);
-            this.txtBoxLocalidade.Name = "txtBoxLocalidade";
-            this.txtBoxLocalidade.Size = new System.Drawing.Size(189, 20);
-            this.txtBoxLocalidade.TabIndex = 2;
+            this.txtBoxValorCombustivelPorLt.Location = new System.Drawing.Point(289, 138);
+            this.txtBoxValorCombustivelPorLt.Name = "txtBoxValorCombustivelPorLt";
+            this.txtBoxValorCombustivelPorLt.Size = new System.Drawing.Size(137, 20);
+            this.txtBoxValorCombustivelPorLt.TabIndex = 13;
             // 
-            // txtBoxAutonomiaCombustivel
+            // lblTabela
             // 
-            this.txtBoxAutonomiaCombustivel.Location = new System.Drawing.Point(10, 137);
-            this.txtBoxAutonomiaCombustivel.Name = "txtBoxAutonomiaCombustivel";
-            this.txtBoxAutonomiaCombustivel.Size = new System.Drawing.Size(137, 20);
-            this.txtBoxAutonomiaCombustivel.TabIndex = 4;
+            this.lblTabela.AutoSize = true;
+            this.lblTabela.Location = new System.Drawing.Point(158, 121);
+            this.lblTabela.Name = "lblTabela";
+            this.lblTabela.Size = new System.Drawing.Size(43, 13);
+            this.lblTabela.TabIndex = 12;
+            this.lblTabela.Text = "Tabela:";
+            // 
+            // lblAutonomiaCombustivel
+            // 
+            this.lblAutonomiaCombustivel.AutoSize = true;
+            this.lblAutonomiaCombustivel.Location = new System.Drawing.Point(10, 121);
+            this.lblAutonomiaCombustivel.Name = "lblAutonomiaCombustivel";
+            this.lblAutonomiaCombustivel.Size = new System.Drawing.Size(137, 13);
+            this.lblAutonomiaCombustivel.TabIndex = 11;
+            this.lblAutonomiaCombustivel.Text = "Autonomia do Combustível:";
+            // 
+            // lblDistanciaKM
+            // 
+            this.lblDistanciaKM.AutoSize = true;
+            this.lblDistanciaKM.Location = new System.Drawing.Point(397, 39);
+            this.lblDistanciaKM.Name = "lblDistanciaKM";
+            this.lblDistanciaKM.Size = new System.Drawing.Size(73, 13);
+            this.lblDistanciaKM.TabIndex = 10;
+            this.lblDistanciaKM.Text = "Distância KM:";
+            // 
+            // lblLocalidade
+            // 
+            this.lblLocalidade.AutoSize = true;
+            this.lblLocalidade.Location = new System.Drawing.Point(202, 39);
+            this.lblLocalidade.Name = "lblLocalidade";
+            this.lblLocalidade.Size = new System.Drawing.Size(62, 13);
+            this.lblLocalidade.TabIndex = 9;
+            this.lblLocalidade.Text = "Localidade:";
+            // 
+            // lblVeiculo
+            // 
+            this.lblVeiculo.AutoSize = true;
+            this.lblVeiculo.Location = new System.Drawing.Point(10, 39);
+            this.lblVeiculo.Name = "lblVeiculo";
+            this.lblVeiculo.Size = new System.Drawing.Size(47, 13);
+            this.lblVeiculo.TabIndex = 8;
+            this.lblVeiculo.Text = "Veículo:";
+            // 
+            // checkBoxIdaVolta
+            // 
+            this.checkBoxIdaVolta.AutoSize = true;
+            this.checkBoxIdaVolta.Location = new System.Drawing.Point(432, 139);
+            this.checkBoxIdaVolta.Name = "checkBoxIdaVolta";
+            this.checkBoxIdaVolta.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxIdaVolta.TabIndex = 6;
+            this.checkBoxIdaVolta.Text = "Ida / Volta";
+            this.checkBoxIdaVolta.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxTabela
+            // 
+            this.comboBoxTabela.FormattingEnabled = true;
+            this.comboBoxTabela.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBoxTabela.Location = new System.Drawing.Point(161, 137);
+            this.comboBoxTabela.Name = "comboBoxTabela";
+            this.comboBoxTabela.Size = new System.Drawing.Size(103, 21);
+            this.comboBoxTabela.TabIndex = 5;
             // 
             // txtBoxDistanciaKM
             // 
@@ -120,25 +185,19 @@
             this.txtBoxDistanciaKM.TabIndex = 3;
             this.txtBoxDistanciaKM.TextChanged += new System.EventHandler(this.txtBoxDistanciaKM_TextChanged);
             // 
-            // comboBoxTabela
+            // txtBoxAutonomiaCombustivel
             // 
-            this.comboBoxTabela.FormattingEnabled = true;
-            this.comboBoxTabela.Location = new System.Drawing.Point(205, 137);
-            this.comboBoxTabela.Name = "comboBoxTabela";
-            this.comboBoxTabela.Size = new System.Drawing.Size(189, 21);
-            this.comboBoxTabela.TabIndex = 5;
-            this.comboBoxTabela.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.txtBoxAutonomiaCombustivel.Location = new System.Drawing.Point(10, 137);
+            this.txtBoxAutonomiaCombustivel.Name = "txtBoxAutonomiaCombustivel";
+            this.txtBoxAutonomiaCombustivel.Size = new System.Drawing.Size(128, 20);
+            this.txtBoxAutonomiaCombustivel.TabIndex = 4;
             // 
-            // checkBoxIdaVolta
+            // txtBoxLocalidade
             // 
-            this.checkBoxIdaVolta.AutoSize = true;
-            this.checkBoxIdaVolta.Location = new System.Drawing.Point(413, 141);
-            this.checkBoxIdaVolta.Name = "checkBoxIdaVolta";
-            this.checkBoxIdaVolta.Size = new System.Drawing.Size(76, 17);
-            this.checkBoxIdaVolta.TabIndex = 6;
-            this.checkBoxIdaVolta.Text = "Ida / Volta";
-            this.checkBoxIdaVolta.UseVisualStyleBackColor = true;
-            this.checkBoxIdaVolta.CheckedChanged += new System.EventHandler(this.checkBoxIdaVolta_CheckedChanged);
+            this.txtBoxLocalidade.Location = new System.Drawing.Point(205, 55);
+            this.txtBoxLocalidade.Name = "txtBoxLocalidade";
+            this.txtBoxLocalidade.Size = new System.Drawing.Size(189, 20);
+            this.txtBoxLocalidade.TabIndex = 2;
             // 
             // btnConfirmar
             // 
@@ -150,50 +209,22 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // lblVeiculo
+            // txtBoxVeiculo
             // 
-            this.lblVeiculo.AutoSize = true;
-            this.lblVeiculo.Location = new System.Drawing.Point(10, 39);
-            this.lblVeiculo.Name = "lblVeiculo";
-            this.lblVeiculo.Size = new System.Drawing.Size(47, 13);
-            this.lblVeiculo.TabIndex = 8;
-            this.lblVeiculo.Text = "Veículo:";
+            this.txtBoxVeiculo.Location = new System.Drawing.Point(10, 55);
+            this.txtBoxVeiculo.Name = "txtBoxVeiculo";
+            this.txtBoxVeiculo.Size = new System.Drawing.Size(189, 20);
+            this.txtBoxVeiculo.TabIndex = 1;
+            this.txtBoxVeiculo.Leave += new System.EventHandler(this.txtBoxVeiculo_Leave);
             // 
-            // lblLocalidade
+            // pictureBox1
             // 
-            this.lblLocalidade.AutoSize = true;
-            this.lblLocalidade.Location = new System.Drawing.Point(202, 39);
-            this.lblLocalidade.Name = "lblLocalidade";
-            this.lblLocalidade.Size = new System.Drawing.Size(62, 13);
-            this.lblLocalidade.TabIndex = 9;
-            this.lblLocalidade.Text = "Localidade:";
-            // 
-            // lblDistanciaKM
-            // 
-            this.lblDistanciaKM.AutoSize = true;
-            this.lblDistanciaKM.Location = new System.Drawing.Point(397, 39);
-            this.lblDistanciaKM.Name = "lblDistanciaKM";
-            this.lblDistanciaKM.Size = new System.Drawing.Size(73, 13);
-            this.lblDistanciaKM.TabIndex = 10;
-            this.lblDistanciaKM.Text = "Distância KM:";
-            // 
-            // lblAutonomiaCombustivel
-            // 
-            this.lblAutonomiaCombustivel.AutoSize = true;
-            this.lblAutonomiaCombustivel.Location = new System.Drawing.Point(10, 121);
-            this.lblAutonomiaCombustivel.Name = "lblAutonomiaCombustivel";
-            this.lblAutonomiaCombustivel.Size = new System.Drawing.Size(137, 13);
-            this.lblAutonomiaCombustivel.TabIndex = 11;
-            this.lblAutonomiaCombustivel.Text = "Autonomia do Combustível:";
-            // 
-            // lblTabela
-            // 
-            this.lblTabela.AutoSize = true;
-            this.lblTabela.Location = new System.Drawing.Point(205, 121);
-            this.lblTabela.Name = "lblTabela";
-            this.lblTabela.Size = new System.Drawing.Size(43, 13);
-            this.lblTabela.TabIndex = 12;
-            this.lblTabela.Text = "Tabela:";
+            this.pictureBox1.Image = global::SistemaCalcularFrete.Properties.Resources.fiorino_moto_caminhao;
+            this.pictureBox1.Location = new System.Drawing.Point(515, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(277, 206);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lblConsumoCombustivel
             // 
@@ -284,15 +315,6 @@
             this.pictureBoxImgVeiculo.TabIndex = 2;
             this.pictureBoxImgVeiculo.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaCalcularFrete.Properties.Resources.fiorino_moto_caminhao;
-            this.pictureBox1.Location = new System.Drawing.Point(515, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 206);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,8 +338,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImgVeiculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImgVeiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,6 +373,8 @@
         private System.Windows.Forms.TextBox txtBoxKmRodado;
         private System.Windows.Forms.TextBox txtBoxCustoKM;
         private System.Windows.Forms.TextBox txtBoxTotal;
+        private System.Windows.Forms.TextBox txtBoxValorCombustivelPorLt;
+        private System.Windows.Forms.Label lblValorCombustivel;
     }
 }
 

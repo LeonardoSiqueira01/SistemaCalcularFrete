@@ -12,9 +12,11 @@ namespace SistemaCalcularFrete
 {
     public partial class Form1 : Form
     {
-        float kmRodada = 0;
+        float kmRodado = 0;
         float KmAutonomia = 0;
-        float custoCombustivel = 0;
+        float QtdCombustivel = 0;
+        double valorCombustivel, custoCombustivel;
+         
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +28,6 @@ namespace SistemaCalcularFrete
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -65,24 +62,32 @@ namespace SistemaCalcularFrete
            
         }
 
-        private void checkBoxIdaVolta_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-           kmRodada= float.Parse(txtBoxDistanciaKM.Text);
+           kmRodado= float.Parse(txtBoxDistanciaKM.Text);
             float kmDobrado = 0;
-            if (checkBoxIdaVolta.Checked)
+            if (checkBoxIdaVolta.Checked== false)
             {
-                kmDobrado = kmRodada * 2;
+                kmDobrado = kmRodado * 1;
             }
-            else {
-                kmDobrado = kmRodada * 1;
+            else if (checkBoxIdaVolta.Checked) {
+                kmDobrado = kmRodado * 2;
             }
+            //consumo do combustível
+            QtdCombustivel = kmDobrado / float.Parse(txtBoxAutonomiaCombustivel.Text);
 
-            custoCombustivel = float.Parse(txtBoxAutonomiaCombustivel.Text) * kmRodada;
+            //custo do combustível
+           custoCombustivel = double.Parse(txtBoxValorCombustivelPorLt.Text)* QtdCombustivel;
+
+            txtBoxDespesaCombustivel.Text = custoCombustivel.ToString();
+
+            txtBoxTotal.Text = Convert.ToString(custoCombustivel * int.Parse(comboBoxTabela.Text));
+        
+            txtBoxConsumoCombustivel.Text=custoCombustivel.ToString();  
+            txtBoxKmRodado.Text = kmDobrado.ToString();
+            txtBoxCustoKM.Text = Convert.ToString(float.Parse(txtBoxKmRodado.Text) / kmDobrado);
         }
     }
 }
